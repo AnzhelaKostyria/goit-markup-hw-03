@@ -30,11 +30,15 @@ ul {
   margin-bottom: 0;
   padding-left: 0;
 }
+img {
+  display: block;
+}
 /*--------------------header--------------------*/
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
   margin: 0;
+  border-bottom: 1px solid var(--accent-color);
 }
 .container {
   max-width: 1158px;
@@ -69,6 +73,7 @@ ul {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-right: 76px;
+  padding: 24px 0;
 }
 .link {
   text-decoration: none;
@@ -112,22 +117,15 @@ ul {
 .title {
   background-color: var(--dark-color);
   margin: 0;
-}
-.container-solutions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 188px;
-  padding-bottom: 48px;
+  padding: 188px 0;
 }
 .main-title {
   font-size: 56px;
   line-height: 1.07;
-  text-align: center;
   letter-spacing: 0.02em;
   color: var(--white-background);
-  width: 100%;
   max-width: 496px;
+  text-align: center;
 }
 .main-button {
   font-size: 16px;
@@ -141,8 +139,10 @@ ul {
   padding: 16px 32px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  margin-bottom: 188px;
   margin-top: 48px;
+  min-width: 169px;
+  height: 56px;
+  border: none;
 }
 .main-button:hover,
 .main-button:focus {
@@ -151,13 +151,24 @@ ul {
 }
 
 /*--------------------features--------------------*/
-.hidden {
-  font-size: 0;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
-
 .list-features {
   display: flex;
   gap: 24px;
+}
+.item-features {
+  width: calc((100% - 72px) / 4);
 }
 .title-feature {
   font-weight: 500;
@@ -172,14 +183,16 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  max-width: 264px;
-  width: 100%;
 }
-
+.features {
+  padding: 120px 0;
+}
 /*--------------------doings--------------------*/
-.container-what-are-we-doing {
-  padding-top: 120px;
+.doings {
   padding-bottom: 120px;
+}
+.item-doings {
+  width: calc((100% - 48px) / 3);
 }
 .doings-tiile {
   font-size: 36px;
@@ -189,7 +202,6 @@ ul {
   letter-spacing: 0.02em;
   color: var(--dark-color);
   text-transform: capitalize;
-  margin-top: 120px;
   margin-bottom: 72px;
 }
 .list-doinds {
@@ -203,10 +215,7 @@ ul {
 }
 
 /*--------------------team--------------------*/
-.container-team {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
+
 .list-team {
   display: flex;
   gap: 24px;
@@ -217,18 +226,24 @@ ul {
 }
 .team {
   background-color: var(--light-color);
+  padding: 120px 0;
 }
 
 .cards {
   background-color: var(--white-background);
   padding-bottom: 32px;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  width: calc((100% - 72px) / 4);
 }
 .person-job {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;
+  padding: 32px 16px;
 }
 .team-title {
   font-size: 36px;
@@ -246,6 +261,8 @@ ul {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--dark-color);
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .team-card-profession {
@@ -253,16 +270,15 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 /*--------------------footer--------------------*/
 .footer {
   background-color: var(--dark-color);
+  padding: 100px 0;
 }
-.container-footer {
-  padding-top: 101.5px;
-  padding-bottom: 100px;
-}
+
 .footer-paragraph {
   font-size: 16px;
   line-height: 1.5;
@@ -277,8 +293,15 @@ ul {
 .footer .studio {
   color: var(--light-color);
 }
-
+.logo-footer {
+  display: inline-block;
+  margin-bottom: 16px;
+}
 /*--------------------buttons-portfolio--------------------*/
+.portfolio-section {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
 .filter {
   font-family: var(--primary-font);
   font-weight: 500;
@@ -300,6 +323,7 @@ ul {
 .filter:focus {
   color: var(--white-background);
   background-color: var(--pressed-state-color);
+  border: 1px solid transparent;
 }
 .buttons {
   display: flex;
@@ -320,12 +344,15 @@ ul {
 .list-item-portfolio {
   border: 1px solid var(--accent-color);
   background: var(--white-background);
+  width: calc((100% - 48px) / 3);
 }
 .cards-name-filter {
   padding-top: 32px;
   padding-right: 16px;
   padding-bottom: 32px;
   padding-left: 16px;
+  border: 1px solid var(--accent-color);
+  border-top: none;
 }
 .title-picture {
   font-weight: 500;
