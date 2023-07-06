@@ -246,13 +246,15 @@ img {
 
 .cards {
   background-color: var(--white-background);
-  padding-bottom: 32px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
   width: calc((100% - 72px) / 4);
-  padding-bottom: 32px;
+}
+
+.name-profession {
+  padding: 32px 16px;
 }
 
 .team-card-name {
@@ -263,7 +265,6 @@ img {
   color: var(--dark-color);
   text-align: center;
   margin-bottom: 8px;
-  margin-top: 32px;
 }
 
 .team-card-profession {
@@ -282,7 +283,7 @@ img {
 
 .logo-footer {
   display: inline-block;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .footer .studio {
